@@ -1,7 +1,14 @@
 # windowpane
 
 Compiling:
-TODO
+```
+$ make
+```
+
+Installing:
+```
+$ make install
+```
 
 `cowpatty2windowpane` Usage:
 ```
