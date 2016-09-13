@@ -7,7 +7,7 @@ $ make
 
 Installing:
 ```
-$ make install
+$ sudo make install
 ```
 
 `cowpatty2windowpane` Usage:
