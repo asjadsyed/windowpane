@@ -10,7 +10,7 @@ Installing:
 $ sudo make install
 ```
 
-`cowpatty2windowpane` Usage:
+Usage for `cowpatty2windowpane`:
 ```
 $ ./cowpatty2windowpane
 error! usage: ./cowpatty2windowpane <input.cwpa> <output.wndp>
@@ -21,7 +21,7 @@ $ du -sh input.cwpa output.wndp
 $ 
 ```
 
-`windowpane` Usage:
+Usage for `windowpane`:
 ```
 $ convert packet capture to simpler format
 $ aircrack-ng -J packetcapture packetcapture.pcap
