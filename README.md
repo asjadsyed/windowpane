@@ -76,6 +76,6 @@ $ ./windowpane
 [FIX me later]
 error! usage: ./windowpane <wordlist.txt> <hashes.wndp> <handshake.hccap>
 $ ./windowpane rockyou.txt output.wndp
-success! 
-passphrase is: [ dictionary ]
+success! passphrase is:
+[ dictionary ]
 ```
