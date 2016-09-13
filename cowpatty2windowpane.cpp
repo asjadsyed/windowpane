@@ -34,8 +34,6 @@ int main(int argc, char* argv[])
                   << std::endl;
 		return 1;
 	}
-	std::cout << cwpa_file.gcount();
-//	std::
 
 	char buf[32];
 
