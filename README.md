@@ -23,7 +23,7 @@ $
 
 Usage for `windowpane`:
 ```
-$ convert packet capture to simpler format
+$ # convert packet capture to simpler format
 $ aircrack-ng -J packetcapture packetcapture.pcap
 Opening packetcapture.pcap
 Read 499 packets.
