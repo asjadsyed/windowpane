@@ -77,5 +77,5 @@ $ ./windowpane
 error! usage: ./windowpane <wordlist.txt> <hashes.wndp> <handshake.hccap>
 $ ./windowpane rockyou.txt output.wndp
 success! 
-ssid is: [ dictionary ]
+passphrase is: [ dictionary ]
 ```
