@@ -7,8 +7,8 @@ int main(int argc, char* argv[])
 	if (argc != 3) {
 		std::cerr << "error! usage: "
 		          << argv[0]
-		          << " <inputcowpatty.pmk>"
-		          << " <outputwindowpane.pmk>"
+		          << " <input.cwpa>"
+		          << " <output.wndp>"
 		          << std::endl;
 		return 1;
 	}

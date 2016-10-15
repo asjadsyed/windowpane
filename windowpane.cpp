@@ -47,7 +47,7 @@ int main (int argc, char* argv[])
 		std::cerr << "error! usage: "
 		          << argv[0]
 		          << " <wordlist.txt>"
-		          << " <hashes.wndp.pmk>"
+		          << " <hashes.wndp>"
 		          << " <handshake.hccap>"
 		          << std::endl;
 		return 1;
