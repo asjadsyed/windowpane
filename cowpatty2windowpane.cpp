@@ -123,7 +123,7 @@ int main(int argc, char* argv[])
 		cwpa_file.ignore(pass_len);
 
 		// these two questions need to be answered
-		// we validate the data is valid before we
+		// to verify the data is valid before we
 		// write it:
 		// 1) did we just try to read data beyond
 		//    the end of the file and because of
