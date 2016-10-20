@@ -14,8 +14,8 @@ clean:
 
 .PHONY: install
 install:
-	echo install $(DESTDIR)/usr/bin/windowpane
-	echo install $(DESTDIR)/usr/bin/cowpatty2windowpane
+	echo install windowpane          $(DESTDIR)/usr/bin/windowpane
+	echo install cowpatty2windowpane $(DESTDIR)/usr/bin/cowpatty2windowpane
 
 .PHONY: uninstall
 uninstall:
