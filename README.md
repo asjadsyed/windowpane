@@ -1,7 +1,7 @@
 # windowpane
 
 ###This software isn't finished: it doesn't work with WPA(1) and has a hardcoded order for adding certain data to hash (which I'll remove when I'm done developing that part). 
-###On top of that, the input cowpatty files need to be generated with genpmk instead of pyrit (because genpmk preserves order, pyrit doesn't).
+
 Compiling:
 ```
 $ make
