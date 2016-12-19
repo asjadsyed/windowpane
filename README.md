@@ -1,6 +1,6 @@
 # windowpane
 
-###This software isn't finished: it doesn't work with WPA(1) and has a hardcoded order for adding certain data to hash (which I'll remove when I'm done developing that part). 
+###This software hasn't been tested with WPA(1)
 
 Compiling:
 ```
