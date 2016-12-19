@@ -93,9 +93,8 @@ int main (int argc, char* argv[])
 	uint8_t mic[CryptoPP::HMAC<CryptoPP::SHA1>::DIGESTSIZE];
 	// compare macs and nonces first because we will be using that comparison
 	// a lot within the loop
-	bool mac1_is_smaller, nonce1_is_smaller;
-	//mac1_is_smaller = ..
-	//nonce1_is_smaller = ..
+	bool   mac1_is_smaller = std::lexicographical_compare(hccap_data.mac1,   hccap_data.mac1 + 6,    hccap_data.mac2,   hccap_data.mac2 + 6);
+	bool nonce1_is_smaller = std::lexicographical_compare(hccap_data.nonce1, hccap_data.nonce1 + 32, hccap_data.nonce2, hccap_data.nonce2 + 32);
 
 	std::string next_guess;
 	bool found_it = false, mics_match = false;
@@ -117,10 +116,20 @@ int main (int argc, char* argv[])
 			// hmac.Restart(); // has no effect because .Final(...) was just called on it
 			hmac.Update(application_specific_string, 22); // 22 == strlen("Pairwise key expansion")
 			hmac.Update(&null_byte, 1);
-			hmac.Update(hccap_data.mac1, mac_len);
-			hmac.Update(hccap_data.mac2, mac_len);
-			hmac.Update(hccap_data.nonce2, nonce_len);
-			hmac.Update(hccap_data.nonce1, nonce_len);
+			if (mac1_is_smaller) {
+				hmac.Update(hccap_data.mac1, mac_len);
+				hmac.Update(hccap_data.mac2, mac_len);
+			} else {
+				hmac.Update(hccap_data.mac2, mac_len);
+				hmac.Update(hccap_data.mac1, mac_len);
+			}
+			if (nonce1_is_smaller) {
+				hmac.Update(hccap_data.nonce1, nonce_len);
+				hmac.Update(hccap_data.nonce2, nonce_len);
+			} else {
+				hmac.Update(hccap_data.nonce2, nonce_len);
+				hmac.Update(hccap_data.nonce1, nonce_len);
+			}
 			hmac.Update(&j, 1);
 			hmac.Final(ptk + (j * 20));//16 for md5 20 for sha1
 		}
