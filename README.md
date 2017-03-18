@@ -1,6 +1,6 @@
 # windowpane
 
-###This software hasn't been tested with WPA(1)
+### This software hasn't been tested with WPA(1)
 
 Compiling:
 ```
