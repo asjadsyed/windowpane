@@ -2,7 +2,7 @@
 all: windowpane cowpatty2windowpane pyritsort
 
 windowpane: windowpane.cpp
-	$(CXX) windowpane.cpp -o windowpane -std=c++11 -lcrypto++ -O2
+	$(CXX) windowpane.cpp -o windowpane -std=c++11 -lcryptopp -O2
 
 cowpatty2windowpane: cowpatty2windowpane.cpp
 	$(CXX) cowpatty2windowpane.cpp -o cowpatty2windowpane -std=c++11 -O2
