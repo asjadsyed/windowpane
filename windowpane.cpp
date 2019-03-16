@@ -14,7 +14,7 @@ const constexpr static   size_t  header_len = 4;
 const constexpr static   size_t  ptk_buf_len = 80;//CryptoPP::HMAC<CryptoPP::SHA1>::DIGESTSIZE * 7;
 const constexpr static   size_t  kck_len = 16;
 const constexpr static   size_t  mic_len = 16;
-const constexpr static  uint8_t* application_specific_string = (const uint8_t*)"Pairwise key expansion";
+const           static  uint8_t* application_specific_string = reinterpret_cast<const uint8_t*>("Pairwise key expansion");
 const constexpr static   size_t  nonce_len = 32;
 const constexpr static   size_t  mac_len = 6;
 const constexpr static  uint8_t  null_byte = 0;
@@ -112,7 +112,7 @@ int main (int argc, char* argv[])
 		// put in nonces and mac addresses into an HMAC with the PMK as the key
 		// this will yield the PTK
 		hmac.SetKey((uint8_t*)wndp_file_buf, pmk_len);
-		for (byte j = 0; j < 4/*( (hccap_data.keyver == ccmp_keyver) ? 3 : 4)*/; j++) {
+		for (CryptoPP::byte j = 0; j < 4/*( (hccap_data.keyver == ccmp_keyver) ? 3 : 4)*/; j++) {
 			// hmac.Restart(); // has no effect because .Final(...) was just called on it
 			hmac.Update(application_specific_string, 22); // 22 == strlen("Pairwise key expansion")
 			hmac.Update(&null_byte, 1);
